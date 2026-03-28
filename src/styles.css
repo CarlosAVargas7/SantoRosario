@@ -1,0 +1,211 @@
+/* ============================================================
+   styles.css — Estilos personalizados que Tailwind no cubre
+   ============================================================ */
+
+/* Glassmorphism para la navbar */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(193, 155, 108, 0.2);
+}
+
+.dark .glass-panel {
+  background: rgba(30, 25, 20, 0.9);
+  border: 1px solid rgba(193, 155, 108, 0.15);
+}
+
+/* Animación hover de las cuentas del rosario */
+.bead {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.bead:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(193, 155, 108, 0.5);
+}
+
+/* Beads mejoradas para dark mode */
+.dark .bead:hover {
+  box-shadow: 0 0 12px rgba(193, 155, 108, 0.6);
+}
+
+/* Animación de aparición suave para el panel de instrucciones */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor máximo para la sección interactiva */
+.interactive-container {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Scrollbar oculta (por si se necesita scroll horizontal) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Botones de control de tamaño de letra */
+.fs-btn {
+  font-weight: 700;
+  color: #5a4a38;
+  background: transparent;
+  border: 1px solid #e0ceb3;
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+.fs-btn:hover {
+  color: #a37c4d;
+  background: #fdf8f0;
+  border-color: #a37c4d;
+}
+.fs-btn:focus-visible {
+  outline: 2px solid #a37c4d;
+  outline-offset: 2px;
+}
+.dark .fs-btn {
+  color: #e0ceb3;
+  border-color: #5a4a38;
+  background: transparent;
+}
+.dark .fs-btn:hover {
+  color: #c19b6c;
+  background: rgba(193, 155, 108, 0.1);
+  border-color: #a37c4d;
+}
+.dark .fs-btn.fs-active {
+  color: #fff;
+  background: #a37c4d;
+  border-color: #a37c4d;
+}
+
+/* ── Modo oscuro: overrides para contenido generado por JS ── */
+
+/* Panel de instrucciones y cards */
+.dark #instruction-panel,
+.dark #mystery-display,
+.dark .prayer-card {
+  background-color: #1e1a16;
+  border-color: #3d3229;
+  color: #f8f4eb;
+}
+
+/* Badges de oraciones dentro del panel */
+.dark #instruction-panel span.inline-block {
+  background-color: #2a2118;
+  border-color: #4a3828;
+  color: #e0ceb3;
+}
+
+/* Cards de misterios generadas por JS */
+.dark .mystery-card {
+  background-color: #1e1a16;
+  border-color: #3d3229;
+}
+.dark .mystery-card:hover {
+  border-color: #a37c4d;
+}
+.dark .mystery-card .mystery-number {
+  background-color: #2a2118;
+  border-color: #5a4a38;
+}
+
+/* Botón "Conocer Origen" */
+.dark .origin-btn {
+  background-color: #2a2118;
+  border-color: #3d3229;
+  color: #e0ceb3;
+}
+.dark .origin-btn:hover {
+  background-color: #332819;
+}
+
+/* Panel de origen expandido */
+.dark .origin-panel {
+  background-color: #2a1f0f;
+  border-color: #5a4a38;
+  color: #e0ceb3;
+}
+
+/* Sección misterios (fondo parchment-50) */
+.dark #mystery-display {
+  background-color: #1a1510;
+  border-color: #3d3229;
+}
+
+/* Visual del rosario */
+.dark .rosario-visual {
+  background-color: #1e1a16;
+  border-color: #3d3229;
+}
+.dark .rosario-visual .bead-label {
+  background-color: #1e1a16;
+  color: #e0ceb3;
+}
+.dark .decenas-label {
+  background-color: #1e1a16;
+  color: #e0ceb3;
+}
+
+/* Sección misterios contenedor */
+.dark #misterios {
+  background-color: #1e1a16;
+  border-color: #3d3229;
+}
+
+/* Footer */
+.dark footer {
+  background-color: #0f0c09;
+}
+
+/* Day selector buttons — generados por JS */
+.dark .day-btn {
+  background-color: #1e1a16 !important;
+  border-color: #3d3229 !important;
+  color: #e0ceb3 !important;
+}
+.dark .day-btn:hover {
+  background-color: #2a2118 !important;
+}
+.dark .day-btn.bg-gold-600 {
+  background-color: #a37c4d !important;
+  border-color: #a37c4d !important;
+  color: #fff !important;
+}
+
+/* El navbar queda fijo — aislado del rem escalado del <html> */
+nav {
+  transition: transform 0.3s ease;
+}
+
+nav a,
+nav span,
+nav button,
+nav div {
+  font-size: 1.2rem !important;
+}
