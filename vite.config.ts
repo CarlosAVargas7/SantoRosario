@@ -1,18 +1,14 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  // Raíz del proyecto (donde está index.html)
-  root: '.',
+  base: "/SantoRosario/", // ← nombre exacto de tu repo en GitHub
 
   build: {
-    // Carpeta de salida para producción
-    outDir: 'dist',
-    // Limpiar dist antes de cada build
+    outDir: "dist",
     emptyOutDir: true,
   },
 
   server: {
-    // Puerto de desarrollo
     port: 3000,
     open: true,
   },
